@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+/* ---------------------------------------------------
+   Design tokens (from design-specification.md)
+   Tailwind v4 auto-generates utility classes from these:
+   --color-*   -> bg-*, text-*, border-*   (e.g. bg-surface, text-muted)
+   --font-*    -> font-*                    (e.g. font-heading, font-body)
+   --radius-*  -> rounded-*                 (e.g. rounded-btn, rounded-card)
+--------------------------------------------------- */
+@theme {
+  /* Colors */
+  --color-background: #12151c;
+  --color-surface: #1a1f29;
+  --color-border: #2a303c;
+  --color-text-primary: #e7e9ec;
+  --color-text-muted: #9aa3af;
+  --color-accent: #d9a441;
+  --color-accent-hover: #c0902f;
+
+  /* Typography */
+  --font-heading: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  /* Radius scale */
+  --radius-btn: 8px;
+  --radius-card: 12px;
+}
+
+/* ---------------------------------------------------
+   Base styles
+--------------------------------------------------- */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-heading);
+    line-height: 1.2;
+  }
+
+  p,
+  li,
+  span {
+    line-height: 1.5;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  ::selection {
+    background-color: var(--color-accent);
+    color: var(--color-background);
+  }
+
+  /* Visible keyboard focus everywhere - accessibility floor from the spec */
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+
+  /* Hide default cursor only on devices with a precise pointer (mouse/trackpad) */
+  @media (pointer: fine) {
+    body {
+      cursor: none;
+    }
+
+    a,
+    button,
+    input,
+    textarea {
+      cursor: none;
+    }
+  }
+}
+
+/* ---------------------------------------------------
+   Respect reduced-motion preference
+   (spec calls for fast, minimal, non-distracting animation -
+   this makes sure it's fully off for users who ask for that)
+--------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
