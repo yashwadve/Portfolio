@@ -9,7 +9,7 @@ const projects = [
     techStack: ["Django", "HTML", "CSS", "JavaScript", "Bootstrap", "SQLite"],
     liveLink: null, // No live deployment yet — UI should show a "Live Demo Coming Soon" state instead of a link
     githubLink: "https://github.com/yashwadve/Maintenance_System",
-    image: "public/images/maintenance_system.png"
+    image: "/images/maintenance_system.png"
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ const projects = [
     techStack: ["Django", "HTML", "CSS", "JavaScript", "Bootstrap", "SQLite"],
     liveLink: null,
     githubLink: "https://github.com/yashwadve/SplitEase",
-    image: "public/images/Splitease.png"
+    image: "/images/Splitease.png"
   },
 ];
 

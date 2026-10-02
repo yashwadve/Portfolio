@@ -4,11 +4,7 @@ function About() {
       <div className="grid w-full grid-cols-1 items-center gap-8 md:grid-cols-[260px_1fr] lg:gap-16">
         <div className="flex justify-center md:justify-start">
           <div className="h-64 w-64 overflow-hidden rounded-card border border-border bg-surface">
-            <img
-              src="public/images/profile.jpeg"
-              alt="Yash Wadve"
-              className="h-full w-full object-cover"
-            />
+            <img src="/images/Profile.jpeg" alt="Yash Wadve" className="h-full w-full object-cover" />
           </div>
         </div>
 
